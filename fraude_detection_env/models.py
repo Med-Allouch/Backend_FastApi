@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, Boolean
 from dataset import Base
 
 class Claim(Base):
-    __tablename__ = 'claims'
+    __tablename__ = "claims"
 
     id = Column(Integer, primary_key=True, index=True)
     amount = Column(Float, nullable=False)

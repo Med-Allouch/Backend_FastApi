@@ -5,16 +5,18 @@ from sqlalchemy.ext.declarative import declarative_base
 #Used to create a session factory, which is responsible for creating sessions to interact with the database.
 from sqlalchemy.orm import sessionmaker
 
+# Database connection URL
 DATABASE_URL = "postgresql://postgres:medall@localhost:5432/insurance_medical"
 
+# Create the database engine
 try:
     engine = create_engine(DATABASE_URL)
-    connection = engine.connect()  
+    connection = engine.connect()
     print("Connected to the database successfully!")
     connection.close()
 except Exception as e:
     print(f"Error: {e}")
 
-# Session and Base setup
+# Session factory and Base setup
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
