@@ -2,15 +2,14 @@ from pydantic import BaseModel
 from typing import Optional
 
 class ClaimBase(BaseModel):
-    amount: float
-    severity: int
+
     age: int
-    private_attorney: bool
-    marital_status: str
-    specialty: str
-    insurance: str
-    gender: str
-    fraudulent: Optional[bool] = False
+    sex: str
+    bmi : float
+    children : int
+    region: str
+    charges: str
+
 
 class ClaimCreate(ClaimBase):
     pass
